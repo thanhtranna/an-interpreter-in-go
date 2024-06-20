@@ -113,6 +113,7 @@ func (l *Lexer) readString() string {
 			break
 		}
 	}
+
 	return l.input[pos:l.position]
 }
 
@@ -151,7 +152,7 @@ func (l *Lexer) skipWhitespace() {
 func (l *Lexer) peekChar() byte {
 	if l.nextPosition >= len(l.input) {
 		return 0
-	} else {
-		return l.input[l.nextPosition]
 	}
+
+	return l.input[l.nextPosition]
 }
